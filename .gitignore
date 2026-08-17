@@ -13,12 +13,17 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# environment variables - NEVER commit secrets
 .env
-.env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store
+
+# Windows-specific files
+Thumbs.db
+Desktop.ini
 
 # jetbrains setting folder
 .idea/

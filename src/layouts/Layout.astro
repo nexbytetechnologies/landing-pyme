@@ -1,54 +1,70 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
+
 <!doctype html>
-
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
+  <script is:inline>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
 
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add("dark");
+      }
+    } catch {
+      // Si localStorage no está disponible, se mantiene el tema predeterminado.
+    }
+  </script>
 
-		<meta
-			name="description"
-			content="Soluciones digitales modernas para pequeñas y medianas empresas."
-		/>
+  <meta charset="UTF-8" />
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Landing Pyme | Soluciones para tu negocio</title>
-	</head>
+  <meta
+    name="description"
+    content="Soluciones digitales modernas para pequeñas y medianas empresas."
+  />
 
-	<body>
-		<slot />
-	</body>
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href={`${import.meta.env.BASE_URL}favicon.svg`}
+  />
+
+  <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
+
+  <title>Landing Pyme | Soluciones para tu negocio</title>
+
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	* {
-		box-sizing: border-box;
-	}
+  * {
+    box-sizing: border-box;
+  }
 
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 
-	body {
-		margin: 0;
-		min-height: 100vh;
-	}
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
 
-	button,
-	input,
-	textarea {
-		font: inherit;
-	}
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
 
-	img {
-		max-width: 100%;
-		display: block;
-	}
+  img {
+    max-width: 100%;
+    display: block;
+  }
 </style>
