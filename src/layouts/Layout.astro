@@ -6,7 +6,7 @@ const baseURL = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 
 const canonicalURL = new URL(baseURL, Astro.site);
-const ogImage = new URL(`${baseURL}og-nexopyme-trans.png`, Astro.site);
+const ogImage = new URL(`${baseURL}og-nexopyme.png`, Astro.site);
 ---
 
 <!doctype html>
@@ -30,10 +30,21 @@ const ogImage = new URL(`${baseURL}og-nexopyme-trans.png`, Astro.site);
 
     <!-- Favicon -->
     <link
-      rel="icon"
-      type="image/png"
-      href={`${import.meta.env.BASE_URL}favicon-nexopyme.ico`}
-    />
+	rel="icon"
+	href={`${import.meta.env.BASE_URL}favicon-nexopyme.ico`}
+/>
+
+<link
+	rel="icon"
+	type="image/png"
+	sizes="512x512"
+	href={`${import.meta.env.BASE_URL}nexopyme-icon.png`}
+/>
+
+<link
+	rel="apple-touch-icon"
+	href={`${import.meta.env.BASE_URL}nexopyme-icon.png`}
+/>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

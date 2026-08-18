@@ -7,12 +7,18 @@ import ThemeToggle from "./ThemeToggle.astro";
 >
   <nav class="mx-auto max-w-7xl px-6">
     <div class="flex items-center justify-between py-4">
-      <a href={import.meta.env.BASE_URL} class="flex items-center">
+      <a href={import.meta.env.BASE_URL} class="flex items-center gap-2">
         <img
-          src={`${import.meta.env.BASE_URL}logo-nexopyme-trans.png`}
-          alt="NexoPyme"
-          class="h-12 w-auto"
+          src={`${import.meta.env.BASE_URL}nexopyme-icon.png`}
+          alt=""
+          class="h-9 w-9"
         />
+
+        <span
+          class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+        >
+          Nexo<span class="text-blue-600 dark:text-blue-400">Pyme</span>
+        </span>
       </a>
 
       <div class="hidden items-center gap-8 md:flex">

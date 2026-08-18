@@ -9,12 +9,18 @@ const currentYear = new Date().getFullYear();
     <div class="grid gap-10 py-14 md:grid-cols-3">
       <!-- Marca -->
       <div>
-        <a href={import.meta.env.BASE_URL} class="flex items-center">
+        <a href={import.meta.env.BASE_URL} class="flex items-center gap-2">
           <img
-            src={`${import.meta.env.BASE_URL}logo-nexopyme-trans.png`}
-            alt="NexoPyme"
-            class="h-11 w-auto"
+            src={`${import.meta.env.BASE_URL}nexopyme-icon.png`}
+            alt=""
+            class="h-8 w-8"
           />
+
+          <span
+            class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+          >
+            Nexo<span class="text-blue-600 dark:text-blue-400">Pyme</span>
+          </span>
         </a>
 
         <p class="mt-4 max-w-sm leading-7 text-slate-600 dark:text-slate-400">

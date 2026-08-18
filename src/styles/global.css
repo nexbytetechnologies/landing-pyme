@@ -1,3 +1,12 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+section {
+	scroll-margin-top: 80px;
+}
+
+::selection {
+	background: #2563eb;
+	color: #f8fafc;
+}
