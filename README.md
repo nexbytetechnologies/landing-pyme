@@ -1,46 +1,59 @@
-# Astro Starter Kit: Basics
+# NexoPyme
 
-```sh
-npm create astro@latest -- --template basics
-```
+Landing page moderna y responsiva orientada a pequeñas y medianas empresas.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este proyecto fue desarrollado como una demo de sitio web comercial por **Nexbyte Technologies**, con el objetivo de mostrar una solución profesional, rápida y adaptable para negocios que necesitan presencia digital.
 
-## 🚀 Project Structure
+## 🌐 Demo
 
-Inside of your Astro project, you'll see the following folders and files:
+Puedes visitar la versión publicada aquí:
+
+https://nexbytetechnologies.github.io/landing-pyme/
+
+## ✨ Características
+
+- Diseño responsive
+- Modo claro y oscuro
+- Navegación adaptable a dispositivos móviles
+- Sección Hero
+- Servicios
+- Sección "Por qué elegirnos"
+- Formulario de contacto demostrativo
+- Footer responsive
+- SEO básico
+- Open Graph para compartir enlaces
+- Diseño modular mediante componentes
+
+## 🛠 Tecnologías
+
+- Astro
+- Tailwind CSS
+- JavaScript
+- HTML
+- CSS
+- Git
+- GitHub
+- GitHub Actions
+- GitHub Pages
+
+## 📁 Estructura principal
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+├── components/
+│   ├── About.astro
+│   ├── Contact.astro
+│   ├── Footer.astro
+│   ├── Hero.astro
+│   ├── Navbar.astro
+│   ├── Services.astro
+│   └── ThemeToggle.astro
+│
+├── layouts/
+│   └── Layout.astro
+│
+├── pages/
+│   └── index.astro
+│
+└── styles/
+    └── global.css

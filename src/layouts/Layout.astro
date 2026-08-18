@@ -1,133 +1,124 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
-const baseURL = import.meta.env.BASE_URL.endsWith('/')
-	? import.meta.env.BASE_URL
-	: `${import.meta.env.BASE_URL}/`;
+const baseURL = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 
 const canonicalURL = new URL(baseURL, Astro.site);
-const ogImage = new URL(`${baseURL}og-nexopyme.png`, Astro.site);
+const ogImage = new URL(`${baseURL}og-nexopyme-trans.png`, Astro.site);
 ---
 
 <!doctype html>
-
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
 
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>NexoPyme | Soluciones digitales para pequeñas empresas</title>
+    <title>NexoPyme | Soluciones digitales para pequeñas empresas</title>
 
-		<meta
-			name="description"
-			content="NexoPyme es una demostración de sitio web profesional para pequeñas y medianas empresas, desarrollada por Nexbyte Technologies."
-		/>
+    <meta
+      name="description"
+      content="NexoPyme es una demostración de sitio web profesional para pequeñas y medianas empresas, desarrollada por Nexbyte Technologies."
+    />
 
-		<meta name="author" content="Nexbyte Technologies" />
-		<meta name="robots" content="index, follow" />
+    <meta name="author" content="Nexbyte Technologies" />
+    <meta name="robots" content="index, follow" />
 
-		<link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={canonicalURL} />
 
-		<!-- Favicon -->
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href={`${import.meta.env.BASE_URL}favicon.svg`}
-		/>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href={`${import.meta.env.BASE_URL}favicon-nexopyme.ico`}
+    />
 
-		<link
-			rel="icon"
-			href={`${import.meta.env.BASE_URL}favicon.ico`}
-		/>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NexoPyme" />
 
-		<!-- Open Graph -->
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="NexoPyme" />
+    <meta
+      property="og:title"
+      content="NexoPyme | Soluciones digitales para pequeñas empresas"
+    />
 
-		<meta
-			property="og:title"
-			content="NexoPyme | Soluciones digitales para pequeñas empresas"
-		/>
+    <meta
+      property="og:description"
+      content="Demo de una landing page moderna y responsiva para pequeñas y medianas empresas, desarrollada por Nexbyte Technologies."
+    />
 
-		<meta
-			property="og:description"
-			content="Demo de una landing page moderna y responsiva para pequeñas y medianas empresas, desarrollada por Nexbyte Technologies."
-		/>
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:image" content={ogImage} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Vista previa de la landing page NexoPyme"
+    />
 
-		<meta
-			property="og:image:alt"
-			content="Vista previa de la landing page NexoPyme"
-		/>
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
 
-		<!-- X / Twitter -->
-		<meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NexoPyme | Soluciones digitales para pequeñas empresas"
+    />
 
-		<meta
-			name="twitter:title"
-			content="NexoPyme | Soluciones digitales para pequeñas empresas"
-		/>
+    <meta
+      name="twitter:description"
+      content="Demo de una landing page moderna para pequeñas y medianas empresas."
+    />
 
-		<meta
-			name="twitter:description"
-			content="Demo de una landing page moderna para pequeñas y medianas empresas."
-		/>
+    <meta name="twitter:image" content={ogImage} />
 
-		<meta name="twitter:image" content={ogImage} />
+    <!-- Tema claro / oscuro -->
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
 
-		<!-- Tema claro / oscuro -->
-		<script is:inline>
-			try {
-				const savedTheme = localStorage.getItem('theme');
-				const prefersDark = window.matchMedia(
-					'(prefers-color-scheme: dark)'
-				).matches;
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch {
+        // Si localStorage no está disponible,
+        // se mantiene el tema predeterminado.
+      }
+    </script>
+  </head>
 
-				if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-					document.documentElement.classList.add('dark');
-				}
-			} catch {
-				// Si localStorage no está disponible,
-				// se mantiene el tema predeterminado.
-			}
-		</script>
-	</head>
-
-	<body>
-		<slot />
-	</body>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	* {
-		box-sizing: border-box;
-	}
+  * {
+    box-sizing: border-box;
+  }
 
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 
-	body {
-		margin: 0;
-		min-height: 100vh;
-	}
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
 
-	button,
-	input,
-	textarea {
-		font: inherit;
-	}
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
 
-	img {
-		max-width: 100%;
-		display: block;
-	}
+  img {
+    max-width: 100%;
+    display: block;
+  }
 </style>
